@@ -54,10 +54,34 @@ class JYMultiLevelViewModel: NSObject {
         let (signal, observer) = Signal<(Int,[IndexPath]), NSError>.pipe()
         cell.titleLabel.reactive.text <~ MutableProperty(model.sectionName)
         cell.leftLabelLeading.constant = CGFloat((model.level - 1) * 10)
-        model.isOn!.producer.startWithValues { (ison) in
-            let imageName = ison ? "icon_bank_treeview_minus" : "icon_bank_treeview_add"
+        model.isOn!.producer.startWithValues { (isOn) in
+            if(model.level == 4){
+                return
+            }
+            let imageName = isOn ? "icon_bank_treeview_minus" : "icon_bank_treeview_add"
             cell.rightBut .setImage(UIImage(named: imageName), for: UIControlState.normal)
         }
+        switch model.level {
+        case 2:
+            cell.contentView.backgroundColor = UIColor.white
+            cell.rightBut.isHidden = false
+            cell.countLabel.isHidden = true
+            break
+        case 3:
+            cell.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            cell.rightBut.isHidden = false
+            cell.countLabel.isHidden = true
+            break
+        case 4:
+            cell.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            cell.countLabel.text = model.questionNum
+            cell.rightBut.isHidden = true
+            cell.countLabel.isHidden = false
+            break
+        default:
+            break
+        }
+        
         cell.rightBut.addTarget(self, action:#selector(JYMultiLevelViewModel.butClick(but:)), for: UIControlEvents.touchUpInside)
     
         

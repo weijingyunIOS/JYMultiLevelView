@@ -40,16 +40,26 @@
                                             </constraints>
                                             <state key="normal" image="icon_bank_treeview_add"/>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snv-vu-Bow">
+                                            <rect key="frame" x="323" y="8" width="42" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Snv-vu-Bow" secondAttribute="bottom" id="1g6-1o-0BV"/>
                                         <constraint firstItem="FpW-cL-Rjp" firstAttribute="top" secondItem="sg3-Jd-Cd0" secondAttribute="top" id="DCI-cr-uSW"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="nR0-A0-Tcc" secondAttribute="trailing" constant="10" id="Wla-BX-Nzz"/>
+                                        <constraint firstAttribute="trailing" secondItem="Snv-vu-Bow" secondAttribute="trailing" constant="10" id="ZMI-Lq-fR3"/>
                                         <constraint firstItem="FpW-cL-Rjp" firstAttribute="leading" secondItem="sg3-Jd-Cd0" secondAttribute="leading" constant="10" id="nza-Rm-eee"/>
+                                        <constraint firstItem="Snv-vu-Bow" firstAttribute="top" secondItem="sg3-Jd-Cd0" secondAttribute="topMargin" id="r82-NC-zs0"/>
                                         <constraint firstItem="nR0-A0-Tcc" firstAttribute="centerY" secondItem="sg3-Jd-Cd0" secondAttribute="centerY" id="vwh-12-PwQ"/>
                                         <constraint firstAttribute="bottom" secondItem="FpW-cL-Rjp" secondAttribute="bottom" id="xtI-3X-P2v"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="countLabel" destination="Snv-vu-Bow" id="nsc-oW-3es"/>
                                     <outlet property="leftLabelLeading" destination="nza-Rm-eee" id="F4M-9z-QAH"/>
                                     <outlet property="rightBut" destination="nR0-A0-Tcc" id="RN7-kA-FPR"/>
                                     <outlet property="titleLabel" destination="FpW-cL-Rjp" id="bqP-Y8-1H9"/>

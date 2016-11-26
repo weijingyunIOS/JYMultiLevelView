@@ -12,6 +12,8 @@ class JYLevelCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var countLabel: UILabel!
+    
     @IBOutlet weak var rightBut: UIButton!
     
     @IBOutlet weak var leftLabelLeading: NSLayoutConstraint!
