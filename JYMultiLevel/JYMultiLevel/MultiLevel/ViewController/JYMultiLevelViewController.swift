@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  JYMultiLevelViewController.swift
 //  JYMultiLevel
 //
 //  Created by weijingyun on 16/11/26.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class JYMultiLevelViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor.red
     }
 
     override func didReceiveMemoryWarning() {
