@@ -12,6 +12,7 @@ import ReactiveSwift
 class JYMultiLevelViewController: UITableViewController {
     
     let viewModel = JYMultiLevelViewModel()
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,6 @@ class JYMultiLevelViewController: UITableViewController {
             default:
             break
         }})
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +38,7 @@ class JYMultiLevelViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: tableView代理
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if viewModel.showLists == nil {
@@ -50,6 +51,15 @@ class JYMultiLevelViewController: UITableViewController {
         
         let identifier = "JYLevelCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        let model = viewModel.showLists![indexPath.row]
+        viewModel.bing(tableView,cell: cell as! JYLevelCell, model: model).observeResult { value in
+            value.analysis(ifSuccess: { (type, indexs) -> Void in
+                print(indexs)
+                self.tableView .insertRows(at: indexs, with: UITableViewRowAnimation.none)
+                
+            }, ifFailure: { (error) -> Void in
+            })
+        }
         return cell
     }
 
