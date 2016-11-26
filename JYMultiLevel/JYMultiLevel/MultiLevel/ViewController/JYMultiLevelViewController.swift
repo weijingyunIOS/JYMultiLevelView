@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 class JYMultiLevelViewController: UITableViewController {
+    
+    let viewModel = JYMultiLevelViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.red
+        let fetchSignal = viewModel.fetchMultiLevelList(jsonName: "testJson")
+        fetchSignal.observe(Signal.Observer { event in
+            switch event {
+            case let .failed(error):
+              print(error.localizedDescription)
+            case .completed:
+              self.tableView.reloadData()
+                print("reloadData")
+            case .interrupted:
+               print("interrupted")
+            default:
+            break
+        }})
+    
     }
 
     override func didReceiveMemoryWarning() {
