@@ -1,5 +1,5 @@
 //
-//  JYLevelCellTwo.swift
+//  JYLevelCellOne.swift
 //  JYMultiLevel
 //
 //  Created by weijingyun on 16/11/26.
@@ -8,13 +8,18 @@
 
 import UIKit
 
-class JYLevelCellTwo: UITableViewCell {
+class JYLevelCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var iconView: UIImageView!
+    
+    @IBOutlet weak var rightBut: UIButton!
+    
+    @IBOutlet weak var leftLabelLeading: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = UITableViewCellSelectionStyle.none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

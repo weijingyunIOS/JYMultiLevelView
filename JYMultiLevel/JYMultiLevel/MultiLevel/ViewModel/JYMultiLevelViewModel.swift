@@ -13,7 +13,7 @@ import HandyJSON
 class JYMultiLevelViewModel: NSObject {
     
     private var levelModelS : JYLevelModel?
-    
+    var showLists:[JYLevelModel]?
 
     func fetchMultiLevelList(jsonName:String) -> Signal<Any, NSError>{
     
@@ -31,6 +31,7 @@ class JYMultiLevelViewModel: NSObject {
                 
                 DispatchQueue.main.async(execute: {
                     self.levelModelS = JSONDeserializer<JYLevelModel>.deserializeFrom(dict: dic)
+                    self.showLists = self.levelModelS?.list
                     observer.sendCompleted()
                 })
                 
@@ -45,9 +46,10 @@ class JYMultiLevelViewModel: NSObject {
             }
         }
         
-        
         return result.0
     }
+    
+   
     
 }
     

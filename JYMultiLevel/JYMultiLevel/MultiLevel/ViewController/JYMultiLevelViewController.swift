@@ -16,7 +16,7 @@ class JYMultiLevelViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = UIColor.red
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         let fetchSignal = viewModel.fetchMultiLevelList(jsonName: "testJson")
         fetchSignal.observe(Signal.Observer { event in
             switch event {
@@ -37,7 +37,21 @@ class JYMultiLevelViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if viewModel.showLists == nil {
+            return 0
+        }
+        return viewModel.showLists!.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let identifier = "JYLevelCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        return cell
+    }
 
 }
 

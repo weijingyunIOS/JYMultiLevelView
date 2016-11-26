@@ -13,18 +13,17 @@
         <!--Multi Level View Controller-->
         <scene sceneID="GJ7-7t-cn0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yAz-Jf-Gpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="azA-lg-HyB" customClass="JYMultiLevelViewController" customModule="JYMultiLevel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="g98-pa-1Su">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Hg4-J8-j0R" customClass="JYLevelCellOne" customModule="JYMultiLevel" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="JYLevelCellOne" selectionStyle="default" indentationWidth="10" reuseIdentifier="JYLevelCell" rowHeight="44" id="Hg4-J8-j0R" customClass="JYLevelCell" customModule="JYMultiLevel" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hg4-J8-j0R" id="sg3-Jd-Cd0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpW-cL-Rjp">
@@ -33,99 +32,31 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_bank_treeview_add" translatesAutoresizingMaskIntoConstraints="NO" id="nL9-En-Boc">
-                                            <rect key="frame" x="349" y="13" width="16" height="16"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR0-A0-Tcc">
+                                            <rect key="frame" x="341" y="14" width="16" height="16"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="16" id="XWx-2Z-i3o"/>
-                                                <constraint firstAttribute="height" constant="16" id="vr9-GG-GZn"/>
+                                                <constraint firstAttribute="width" constant="16" id="2Dl-3T-c5K"/>
+                                                <constraint firstAttribute="height" constant="16" id="eZm-VD-Gbq"/>
                                             </constraints>
-                                        </imageView>
+                                            <state key="normal" image="icon_bank_treeview_add"/>
+                                        </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.55896193569999997" blue="0.3596357537" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="FpW-cL-Rjp" firstAttribute="top" secondItem="sg3-Jd-Cd0" secondAttribute="top" id="DCI-cr-uSW"/>
-                                        <constraint firstItem="nL9-En-Boc" firstAttribute="centerY" secondItem="sg3-Jd-Cd0" secondAttribute="centerY" id="b1L-xc-pZY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nR0-A0-Tcc" secondAttribute="trailing" constant="10" id="Wla-BX-Nzz"/>
                                         <constraint firstItem="FpW-cL-Rjp" firstAttribute="leading" secondItem="sg3-Jd-Cd0" secondAttribute="leading" constant="10" id="nza-Rm-eee"/>
-                                        <constraint firstAttribute="trailing" secondItem="nL9-En-Boc" secondAttribute="trailing" constant="10" id="pFb-t7-fyN"/>
+                                        <constraint firstItem="nR0-A0-Tcc" firstAttribute="centerY" secondItem="sg3-Jd-Cd0" secondAttribute="centerY" id="vwh-12-PwQ"/>
                                         <constraint firstAttribute="bottom" secondItem="FpW-cL-Rjp" secondAttribute="bottom" id="xtI-3X-P2v"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="iconView" destination="nL9-En-Boc" id="TL3-Df-Eec"/>
-                                    <outlet property="titleLabel" destination="FpW-cL-Rjp" id="S3F-b4-A3N"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Wlk-gG-Pxl" customClass="JYLevelCellTwo" customModule="JYMultiLevel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wlk-gG-Pxl" id="3aG-tj-aXH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgl-Ap-M6P">
-                                            <rect key="frame" x="20" y="0.0" width="42" height="44"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_bank_treeview_add" translatesAutoresizingMaskIntoConstraints="NO" id="3yS-PK-BaE">
-                                            <rect key="frame" x="349" y="13" width="16" height="16"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="16" id="350-Fs-k6A"/>
-                                                <constraint firstAttribute="width" constant="16" id="Oll-qu-gL2"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" red="1" green="0.55896193569999997" blue="0.3596357537" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="3yS-PK-BaE" firstAttribute="centerY" secondItem="3aG-tj-aXH" secondAttribute="centerY" id="4ck-he-zEZ"/>
-                                        <constraint firstAttribute="trailing" secondItem="3yS-PK-BaE" secondAttribute="trailing" constant="10" id="88p-Pm-SbG"/>
-                                        <constraint firstItem="jgl-Ap-M6P" firstAttribute="top" secondItem="3aG-tj-aXH" secondAttribute="top" id="ekg-cZ-9WI"/>
-                                        <constraint firstAttribute="bottom" secondItem="jgl-Ap-M6P" secondAttribute="bottom" id="kKr-TJ-j0X"/>
-                                        <constraint firstItem="jgl-Ap-M6P" firstAttribute="leading" secondItem="3aG-tj-aXH" secondAttribute="leading" constant="20" id="yAg-Be-dUk"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="iconView" destination="3yS-PK-BaE" id="tPn-TT-k9y"/>
-                                    <outlet property="titleLabel" destination="jgl-Ap-M6P" id="ADM-5v-9Xh"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Em2-xt-dmu" customClass="JYLevelCellThree" customModule="JYMultiLevel" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Em2-xt-dmu" id="i0q-lE-vds">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctp-q3-EKF">
-                                            <rect key="frame" x="30" y="0.0" width="42" height="44"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdy-W2-1Ya">
-                                            <rect key="frame" x="328.5" y="8" width="28.5" height="27.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="1" green="0.55896193569999997" blue="0.3596357537" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Hdy-W2-1Ya" secondAttribute="bottom" id="KMc-lO-v4X"/>
-                                        <constraint firstItem="Ctp-q3-EKF" firstAttribute="leading" secondItem="i0q-lE-vds" secondAttribute="leading" constant="30" id="LQA-Dk-WSd"/>
-                                        <constraint firstAttribute="bottom" secondItem="Ctp-q3-EKF" secondAttribute="bottom" id="TgA-2c-F47"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Hdy-W2-1Ya" secondAttribute="trailing" constant="10" id="iN6-MF-6VL"/>
-                                        <constraint firstItem="Hdy-W2-1Ya" firstAttribute="top" secondItem="i0q-lE-vds" secondAttribute="topMargin" id="siu-9e-J0I"/>
-                                        <constraint firstItem="Ctp-q3-EKF" firstAttribute="top" secondItem="i0q-lE-vds" secondAttribute="top" id="xah-lW-puT"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="countLabel" destination="Hdy-W2-1Ya" id="HeO-x6-3Tp"/>
-                                    <outlet property="titleLabel" destination="Ctp-q3-EKF" id="y70-Xo-XVK"/>
+                                    <outlet property="leftLabelLeading" destination="nza-Rm-eee" id="F4M-9z-QAH"/>
+                                    <outlet property="rightBut" destination="nR0-A0-Tcc" id="RN7-kA-FPR"/>
+                                    <outlet property="titleLabel" destination="FpW-cL-Rjp" id="bqP-Y8-1H9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="azA-lg-HyB" id="z0C-rL-WNY"/>
                             <outlet property="delegate" destination="azA-lg-HyB" id="AYr-jm-DvD"/>
@@ -133,6 +64,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="BjR-ip-qau"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAz-Jf-Gpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1466" y="-413"/>
         </scene>

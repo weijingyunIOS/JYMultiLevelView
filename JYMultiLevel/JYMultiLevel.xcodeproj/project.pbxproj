@@ -16,9 +16,7 @@
 		5C73A72B1DE93CBE00212CB2 /* JYMultiLevelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73A72A1DE93CBE00212CB2 /* JYMultiLevelUITests.swift */; };
 		5C73A7431DE942FD00212CB2 /* JYMultiLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73A7421DE942FD00212CB2 /* JYMultiLevelViewController.swift */; };
 		5C73A7451DE9451B00212CB2 /* MultiLevel.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C73A7441DE9451B00212CB2 /* MultiLevel.xcassets */; };
-		5C73A7491DE948B300212CB2 /* JYLevelCellOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73A7481DE948B300212CB2 /* JYLevelCellOne.swift */; };
-		5C73A74B1DE948C100212CB2 /* JYLevelCellTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73A74A1DE948C100212CB2 /* JYLevelCellTwo.swift */; };
-		5C73A74D1DE948DE00212CB2 /* JYLevelCellThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73A74C1DE948DE00212CB2 /* JYLevelCellThree.swift */; };
+		5C73A7491DE948B300212CB2 /* JYLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73A7481DE948B300212CB2 /* JYLevelCell.swift */; };
 		5C73A74F1DE94A2800212CB2 /* JYLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73A74E1DE94A2800212CB2 /* JYLevelModel.swift */; };
 		5C73A7511DE94C3200212CB2 /* testJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C73A7501DE94C3200212CB2 /* testJson.json */; };
 		5C73A7531DE94C6100212CB2 /* JYMultiLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C73A7521DE94C6100212CB2 /* JYMultiLevelViewModel.swift */; };
@@ -58,9 +56,7 @@
 		5C73A72C1DE93CBE00212CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C73A7421DE942FD00212CB2 /* JYMultiLevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYMultiLevelViewController.swift; sourceTree = "<group>"; };
 		5C73A7441DE9451B00212CB2 /* MultiLevel.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MultiLevel.xcassets; sourceTree = "<group>"; };
-		5C73A7481DE948B300212CB2 /* JYLevelCellOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLevelCellOne.swift; sourceTree = "<group>"; };
-		5C73A74A1DE948C100212CB2 /* JYLevelCellTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLevelCellTwo.swift; sourceTree = "<group>"; };
-		5C73A74C1DE948DE00212CB2 /* JYLevelCellThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLevelCellThree.swift; sourceTree = "<group>"; };
+		5C73A7481DE948B300212CB2 /* JYLevelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLevelCell.swift; sourceTree = "<group>"; };
 		5C73A74E1DE94A2800212CB2 /* JYLevelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYLevelModel.swift; sourceTree = "<group>"; };
 		5C73A7501DE94C3200212CB2 /* testJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testJson.json; sourceTree = "<group>"; };
 		5C73A7521DE94C6100212CB2 /* JYMultiLevelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYMultiLevelViewModel.swift; sourceTree = "<group>"; };
@@ -181,9 +177,7 @@
 		5C73A73F1DE942CF00212CB2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C73A7481DE948B300212CB2 /* JYLevelCellOne.swift */,
-				5C73A74A1DE948C100212CB2 /* JYLevelCellTwo.swift */,
-				5C73A74C1DE948DE00212CB2 /* JYLevelCellThree.swift */,
+				5C73A7481DE948B300212CB2 /* JYLevelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -408,11 +402,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C73A74B1DE948C100212CB2 /* JYLevelCellTwo.swift in Sources */,
 				5C73A7531DE94C6100212CB2 /* JYMultiLevelViewModel.swift in Sources */,
 				5C73A7601DE955BD00212CB2 /* JYOptionalReturn.swift in Sources */,
-				5C73A7491DE948B300212CB2 /* JYLevelCellOne.swift in Sources */,
-				5C73A74D1DE948DE00212CB2 /* JYLevelCellThree.swift in Sources */,
+				5C73A7491DE948B300212CB2 /* JYLevelCell.swift in Sources */,
 				5C73A7431DE942FD00212CB2 /* JYMultiLevelViewController.swift in Sources */,
 				5C73A70B1DE93CBE00212CB2 /* AppDelegate.swift in Sources */,
 				5C73A74F1DE94A2800212CB2 /* JYLevelModel.swift in Sources */,
