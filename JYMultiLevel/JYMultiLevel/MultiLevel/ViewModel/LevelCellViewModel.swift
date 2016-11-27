@@ -18,7 +18,7 @@ enum ELevelCellOperation {
 class LevelCellViewModel: NSObject {
     
     let levelModel : LevelModel
-    var isOn = MutableProperty(false)
+    let isOn : MutableProperty<Bool>
     var cellIdentifier : String {
         get{
             return "LevelCell"
@@ -53,7 +53,18 @@ class LevelCellViewModel: NSObject {
     func bingCell(_ cell : LevelCell) -> Signal<(ELevelCellOperation, LevelCellViewModel), NSError>{
         
         cell.titleLabel.text = levelModel.sectionName
+        // TODO: Bug
+        /* 打印发现进行流的绑定 cell.rightBut.isSelected 的值变了但界面未能更新
+         * ----- false false true
+         * +++++ false false false
+         */
+        cell.rightBut.isSelected = levelModel.isOn
+        
+        print("-----",isOn.value ,levelModel.isOn, cell.rightBut.isSelected)
+        //但是由于cell的复用初始值未必对的上
         cell.rightBut.reactive.isSelected <~ isOn
+        print("+++++",isOn.value ,levelModel.isOn, cell.rightBut.isSelected)
+        
         cell.leftLabelLeading.constant = CGFloat((levelModel.level - 1) * 10)
         switch levelModel.level {
         case 2:
@@ -75,7 +86,6 @@ class LevelCellViewModel: NSObject {
         default:
             break
         }
-    
         // 事件触发
         cell.butClick = { (x : Bool) ->() in
             self.isOn.swap(x)
@@ -87,14 +97,13 @@ class LevelCellViewModel: NSObject {
                 if self.levelModel.isOn == isOn{
                     return
                 }
-                
+                // 模型更新
+                self.levelModel.isOn = isOn
+    
                 if(self.levelModel.level == 4){
                     return
                 }
-                
-                print(isOn)
-                // 模型更新
-                self.levelModel.isOn = isOn
+            
                 if(isOn){
                     observer.send(value: (ELevelCellOperation.insertLevel,self))
                 }else{
