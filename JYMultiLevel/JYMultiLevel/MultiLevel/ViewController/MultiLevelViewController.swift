@@ -40,28 +40,27 @@ class MultiLevelViewController: UITableViewController {
     
     // MARK: tableView代理
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if viewModel.showLists == nil {
-            return 0
-        }
-        return viewModel.showLists!.count
+        return viewModel.showLists.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let identifier = "LevelCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        let model = viewModel.showLists![indexPath.row]
-        viewModel.bing(tableView,cell: cell as! LevelCell, model: model).observeResult { value in
-            value.analysis(ifSuccess: { (type, indexs) -> Void in
-                print(indexs)
-                self.tableView .insertRows(at: indexs, with: UITableViewRowAnimation.none)
-                
-            }, ifFailure: { (error) -> Void in
-            })
-        }
+        let cellViewModel = viewModel.showLists[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.cellIdentifier, for: indexPath)
+        let signal = cellViewModel.bingCell(cell as! LevelCell)
         return cell
     }
 
 }
 
+//tableView 的界面处理
+//                let currentIndex = try tableView.indexPath(for: cell).unwrap()
+//                let currentModel = self.levelModel
+//                let lists = try currentModel.getLevelList().unwrap()
+
+//                    self.showLists!.insert(contentsOf: lists, at: currentIndex.row + 1)
+//                    var indexs : [IndexPath] = []
+//                    for idx in 1...lists.count {
+//                        indexs = indexs + [IndexPath(row: currentIndex.row + idx, section: currentIndex.section)]
+//                    }
+//                    observer.send(value: (0,indexs))

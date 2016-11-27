@@ -8,7 +8,6 @@
 
 import UIKit
 import HandyJSON
-import ReactiveSwift
 
 class LevelModel : HandyJSON {
     
@@ -17,12 +16,8 @@ class LevelModel : HandyJSON {
     var sectionName : String?                   // 目录名
     var orderNum : String?
     var questionNum : String?
-    var list : [LevelModel]?                  // 包含的下一层级
-
-    // HandyJSON 对非基本类型 要使用 可选类型 否则转换会 崩溃，但要保证有值所以用懒加载实现
-    lazy var isOn : MutableProperty<Bool>? = {  // 是否展开
-        return MutableProperty(false)
-    }()
+    var list : [LevelModel]?                   // 包含的下一层级
+    var isOn = false                           // 是否展开
     
     
     required  init() {}
@@ -37,12 +32,11 @@ class LevelModel : HandyJSON {
         var lists : [LevelModel]! = []
         for leveModel in list! {
             lists = lists + [leveModel]
-            let ll : [LevelModel]! = isOn!.value ? leveModel.getLevelList() : nil
+            let ll : [LevelModel]! = isOn ? leveModel.getLevelList() : nil
             if (ll != nil) {
                 lists = lists + ll!
             }
         }
         return lists
     }
-
 }

@@ -13,8 +13,7 @@ import HandyJSON
 
 class MultiLevelViewModel: NSObject {
     
-    private var levelModelS : LevelModel?
-    var showLists:[LevelModel]?
+    var showLists:[LevelCellViewModel] = []
 
     func fetchMultiLevelList(jsonName:String) -> Signal<Any, NSError>{
     
@@ -30,9 +29,17 @@ class MultiLevelViewModel: NSObject {
                 let dic = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 
                 DispatchQueue.main.async(execute: {
-                    self.levelModelS = JSONDeserializer<LevelModel>.deserializeFrom(dict: dic)
-                    self.showLists = self.levelModelS?.getLevelList()
-                    observer.sendCompleted()
+                    
+                    do{
+                        let models = try JSONDeserializer<LevelModel>.deserializeFrom(dict: dic).unwrap()
+                        let list = try models.list.unwrap()
+                        self.showLists = LevelCellViewModel.createLevelModelList(list)
+                        observer.sendCompleted()
+                    
+                    }catch{
+                        print(error)
+                        observer.sendCompleted()
+                    }
                 })
                 
             } catch{
@@ -47,75 +54,6 @@ class MultiLevelViewModel: NSObject {
         }
         
         return signal
-    }
-    
-    func bing(_ tableView:UITableView,cell:LevelCell,model:LevelModel) -> Signal<(Int,[IndexPath]), NSError>{
-        
-        let (signal, observer) = Signal<(Int,[IndexPath]), NSError>.pipe()
-//        cell.titleLabel.reactive.text <~ MutableProperty(model.sectionName)
-        cell.titleLabel.text = model.sectionName
-        cell.leftLabelLeading.constant = CGFloat((model.level - 1) * 10)
-        model.isOn!.producer.startWithValues { (isOn) in
-            if(model.level == 4){
-                return
-            }
-            let imageName = isOn ? "icon_bank_treeview_minus" : "icon_bank_treeview_add"
-            cell.rightBut .setImage(UIImage(named: imageName), for: UIControlState.normal)
-        }
-        switch model.level {
-        case 2:
-            cell.contentView.backgroundColor = UIColor.white
-            cell.rightBut.isHidden = false
-            cell.countLabel.isHidden = true
-            break
-        case 3:
-            cell.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
-            cell.rightBut.isHidden = false
-            cell.countLabel.isHidden = true
-            break
-        case 4:
-            cell.contentView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
-            cell.countLabel.text = model.questionNum
-            cell.rightBut.isHidden = true
-            cell.countLabel.isHidden = false
-            break
-        default:
-            break
-        }
-        
-        
-        cell.rightBut.addTarget(self, action:#selector(MultiLevelViewModel.butClick(but:)), for: UIControlEvents.touchUpInside)
-    
-        
-        // MARK: tableView代理 事件模拟
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1*NSEC_PER_SEC))/Double(NSEC_PER_SEC)) {
-           
-            do {
-                let currentIndex = try tableView.indexPath(for: cell).unwrap()
-                let currentModel = self.showLists![currentIndex.row]
-                let lists = try currentModel.getLevelList().unwrap()
-                
-                if(currentModel.isOn!.value){
-                    return
-                }
-                currentModel.isOn!.swap(true)
-                self.showLists!.insert(contentsOf: lists, at: currentIndex.row + 1)
-                var indexs : [IndexPath] = []
-                for idx in 1...lists.count {
-                    indexs = indexs + [IndexPath(row: currentIndex.row + idx, section: currentIndex.section)]
-                }
-                observer.send(value: (0,indexs))
-                
-            } catch{
-            }
-        }
-        
-        return signal
-    }
-    
-    func butClick(but : UIButton){
-        print(but)
-        
     }
  
 }

@@ -22,6 +22,8 @@ class LevelCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         selectionStyle = UITableViewCellSelectionStyle.none
+        rightBut.setImage(UIImage(named:"icon_bank_treeview_add"), for: UIControlState.normal)
+        rightBut.setImage(UIImage(named:"icon_bank_treeview_minus"), for: UIControlState.selected)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
