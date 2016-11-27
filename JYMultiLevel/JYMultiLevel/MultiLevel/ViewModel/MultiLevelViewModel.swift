@@ -61,6 +61,7 @@ class MultiLevelViewModel: NSObject {
         
         do {
             
+            //TODO: 遍历修改展开状态，但是放开了太多属性不符合开闭原则，待处理
             if (cellViewModel.levelModel.isOn && cellViewModel.levelModel.level == 2) {
                 
                 for cellVM in showLists
