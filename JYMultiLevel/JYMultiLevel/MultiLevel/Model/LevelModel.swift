@@ -22,21 +22,26 @@ class LevelModel : HandyJSON {
     
     required  init() {}
     
-    // 根据是否展开 获取 下级需要展现的所有model
-    func getLevelList() -> [LevelModel]? {
-        
-        if (list == nil) {
-            return nil;
-        }
+    func getLowerLevelList() -> [LevelModel]? {
         
         var lists : [LevelModel]! = []
-        for leveModel in list! {
-            lists = lists + [leveModel]
-            let ll : [LevelModel]! = isOn ? leveModel.getLevelList() : nil
+        for model in list! {
+            lists = lists + [model]
+            let ll = model.getLevelList()
             if (ll != nil) {
                 lists = lists + ll!
             }
         }
         return lists
     }
+    
+    // 根据是否展开 获取 下级需要展现的所有model
+    private func getLevelList() -> [LevelModel]? {
+        
+        if (list == nil || isOn == false) {
+            return nil;
+        }
+        return getLowerLevelList()
+    }
+    
 }

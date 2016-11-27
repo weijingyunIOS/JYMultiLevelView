@@ -48,19 +48,18 @@ class MultiLevelViewController: UITableViewController {
         let cellViewModel = viewModel.showLists[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.cellIdentifier, for: indexPath)
         let signal = cellViewModel.bingCell(cell as! LevelCell)
+        signal.observeResult { (resut) in
+            
+            resut.analysis(ifSuccess: { (operation, cellViewModel) -> Void in
+                self.viewModel.updateTableView(tableView, operation: operation, cellViewModel: cellViewModel)
+                
+            }, ifFailure: { (error) -> Void in
+                print(error)
+            })
+        }
         return cell
     }
-
 }
 
-//tableView 的界面处理
-//                let currentIndex = try tableView.indexPath(for: cell).unwrap()
-//                let currentModel = self.levelModel
-//                let lists = try currentModel.getLevelList().unwrap()
 
-//                    self.showLists!.insert(contentsOf: lists, at: currentIndex.row + 1)
-//                    var indexs : [IndexPath] = []
-//                    for idx in 1...lists.count {
-//                        indexs = indexs + [IndexPath(row: currentIndex.row + idx, section: currentIndex.section)]
-//                    }
-//                    observer.send(value: (0,indexs))
+

@@ -17,15 +17,13 @@ enum ELevelCellOperation {
 
 class LevelCellViewModel: NSObject {
     
-    let levelModel : LevelModel
-    var isOn = MutableProperty(false)
+    private let levelModel : LevelModel
+    private var isOn = MutableProperty(false)
     var cellIdentifier : String {
         get{
             return "LevelCell"
         }
     }
-    var levelCell  : LevelCell?
-   
     
     init(_ levelModel : LevelModel) {
         
@@ -41,6 +39,15 @@ class LevelCellViewModel: NSObject {
             viewModelList.append(LevelCellViewModel.init(model))
         }
         return viewModelList
+    }
+    
+    func getListLevelViewModel() -> [LevelCellViewModel]? {
+        
+        let list = levelModel.getLowerLevelList()
+        if (list != nil) {
+            return LevelCellViewModel.createLevelModelList(list!)
+        }
+        return nil
     }
     
     func bingCell(_ cell : LevelCell) -> Signal<(ELevelCellOperation, LevelCellViewModel), NSError>{
@@ -69,6 +76,7 @@ class LevelCellViewModel: NSObject {
             break
         }
         
+        cell.rightBut.removeTarget(self, action: #selector(rightButClick(but:)), for: UIControlEvents.touchUpInside)
         cell.rightBut.addTarget(self, action: #selector(rightButClick(but:)), for: UIControlEvents.touchUpInside)
         
         

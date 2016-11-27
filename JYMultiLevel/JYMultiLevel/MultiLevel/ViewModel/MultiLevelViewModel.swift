@@ -55,5 +55,47 @@ class MultiLevelViewModel: NSObject {
         
         return signal
     }
- 
+    
+    // 辅助功能
+    func updateTableView(_ tableView: UITableView, operation:ELevelCellOperation,cellViewModel: LevelCellViewModel){
+        
+        do {
+            let lists = try cellViewModel.getListLevelViewModel().unwrap()
+            let currentIndex = try getIndexBy(cellViewModel).unwrap()
+            var indexs : [IndexPath] = []
+            for idx in 1...lists.count {
+                indexs = indexs + [IndexPath(row: currentIndex + idx, section: 0)]
+            }
+            print(indexs)
+            tableView.beginUpdates()
+            switch operation {
+            case .insertLevel:
+                showLists.insert(contentsOf: lists, at: currentIndex + 1)
+                tableView.insertRows(at: indexs, with: UITableViewRowAnimation.none)
+                break
+            case .moveLevel:
+                for idx in 1...lists.count {
+                    showLists.remove(at:  currentIndex + idx)
+                }
+                tableView.deleteRows(at: indexs, with: UITableViewRowAnimation.none)
+                break
+            default:
+                break
+            }
+            tableView.endUpdates()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func getIndexBy(_ cellViewModel: LevelCellViewModel) -> Int?{
+    
+        for (idx,cellVM) in showLists.enumerated()
+        {
+            if (cellVM == cellViewModel) {
+                return idx
+            }
+        }
+        return nil
+    }
 }
