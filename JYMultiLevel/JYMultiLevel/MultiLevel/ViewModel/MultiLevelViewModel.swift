@@ -60,6 +60,20 @@ class MultiLevelViewModel: NSObject {
     func updateTableView(_ tableView: UITableView, operation:ELevelCellOperation,cellViewModel: LevelCellViewModel){
         
         do {
+            
+            if (cellViewModel.levelModel.isOn && cellViewModel.levelModel.level == 2) {
+                
+                for cellVM in showLists
+                {
+                    if (cellVM.levelModel.level == cellViewModel.levelModel.level) {
+                        if (cellVM != cellViewModel) {
+                            cellVM.isOn.swap(false)
+                        }
+                    }
+                }
+            }
+            
+            
             let lists = try cellViewModel.getListLevelViewModel().unwrap()
             let currentIndex = try getIndexBy(cellViewModel).unwrap()
             var indexs : [IndexPath] = []

@@ -17,8 +17,8 @@ enum ELevelCellOperation {
 
 class LevelCellViewModel: NSObject {
     
-    private let levelModel : LevelModel
-    private var isOn = MutableProperty(false)
+    let levelModel : LevelModel
+    var isOn = MutableProperty(false)
     var cellIdentifier : String {
         get{
             return "LevelCell"
