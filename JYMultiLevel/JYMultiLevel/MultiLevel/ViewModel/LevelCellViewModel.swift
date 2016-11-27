@@ -107,5 +107,9 @@ class LevelCellViewModel: NSObject {
         return signal
     }
     
-   
+    func didSelect(){
+        if (levelModel.level != 4) {
+            isOn.swap(!isOn.value)
+        }
+    }
 }

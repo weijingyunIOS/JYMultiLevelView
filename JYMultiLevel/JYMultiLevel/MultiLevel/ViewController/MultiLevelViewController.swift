@@ -59,6 +59,12 @@ class MultiLevelViewController: UITableViewController {
         }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellViewModel = viewModel.showLists[indexPath.row]
+        cellViewModel.didSelect()
+    }
+    
 }
 
 
