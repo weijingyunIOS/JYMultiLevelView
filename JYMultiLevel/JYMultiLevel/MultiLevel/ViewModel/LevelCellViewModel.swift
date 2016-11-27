@@ -75,12 +75,12 @@ class LevelCellViewModel: NSObject {
         default:
             break
         }
-        
-        cell.rightBut.removeTarget(self, action: #selector(rightButClick(but:)), for: UIControlEvents.touchUpInside)
-        cell.rightBut.addTarget(self, action: #selector(rightButClick(but:)), for: UIControlEvents.touchUpInside)
-        
-        
+    
         // 事件触发
+        cell.butClick = { (x : Bool) ->() in
+            self.isOn.swap(x)
+        }
+        
         let (signal, observer) = Signal<(ELevelCellOperation, LevelCellViewModel), NSError>.pipe()
         isOn.producer.startWithValues {(isOn) in
             
@@ -107,7 +107,5 @@ class LevelCellViewModel: NSObject {
         return signal
     }
     
-    @objc private func rightButClick(but:UIButton) {
-        isOn.swap(!but.isSelected)
-    }
+   
 }
