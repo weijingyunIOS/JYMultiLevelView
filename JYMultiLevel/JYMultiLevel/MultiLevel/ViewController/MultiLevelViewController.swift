@@ -1,6 +1,6 @@
 //
-//  JYMultiLevelViewController.swift
-//  JYMultiLevel
+//  MultiLevelViewController.swift
+//  MultiLevel
 //
 //  Created by weijingyun on 16/11/26.
 //  Copyright © 2016年 weijingyun. All rights reserved.
@@ -9,9 +9,9 @@
 import UIKit
 import ReactiveSwift
 
-class JYMultiLevelViewController: UITableViewController {
+class MultiLevelViewController: UITableViewController {
     
-    let viewModel = JYMultiLevelViewModel()
+    let viewModel = MultiLevelViewModel()
    
 
     override func viewDidLoad() {
@@ -49,10 +49,10 @@ class JYMultiLevelViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let identifier = "JYLevelCell"
+        let identifier = "LevelCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         let model = viewModel.showLists![indexPath.row]
-        viewModel.bing(tableView,cell: cell as! JYLevelCell, model: model).observeResult { value in
+        viewModel.bing(tableView,cell: cell as! LevelCell, model: model).observeResult { value in
             value.analysis(ifSuccess: { (type, indexs) -> Void in
                 print(indexs)
                 self.tableView .insertRows(at: indexs, with: UITableViewRowAnimation.none)

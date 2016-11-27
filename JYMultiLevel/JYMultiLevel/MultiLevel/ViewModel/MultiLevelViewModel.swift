@@ -1,6 +1,6 @@
 //
-//  JYMultiLevelViewModel.swift
-//  JYMultiLevel
+//  MultiLevelViewModel.swift
+//  MultiLevel
 //
 //  Created by weijingyun on 16/11/26.
 //  Copyright © 2016年 weijingyun. All rights reserved.
@@ -11,10 +11,10 @@ import ReactiveSwift
 import ReactiveCocoa
 import HandyJSON
 
-class JYMultiLevelViewModel: NSObject {
+class MultiLevelViewModel: NSObject {
     
-    private var levelModelS : JYLevelModel?
-    var showLists:[JYLevelModel]?
+    private var levelModelS : LevelModel?
+    var showLists:[LevelModel]?
 
     func fetchMultiLevelList(jsonName:String) -> Signal<Any, NSError>{
     
@@ -30,7 +30,7 @@ class JYMultiLevelViewModel: NSObject {
                 let dic = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 
                 DispatchQueue.main.async(execute: {
-                    self.levelModelS = JSONDeserializer<JYLevelModel>.deserializeFrom(dict: dic)
+                    self.levelModelS = JSONDeserializer<LevelModel>.deserializeFrom(dict: dic)
                     self.showLists = self.levelModelS?.getLevelList()
                     observer.sendCompleted()
                 })
@@ -49,10 +49,11 @@ class JYMultiLevelViewModel: NSObject {
         return signal
     }
     
-    func bing(_ tableView:UITableView,cell:JYLevelCell,model:JYLevelModel) -> Signal<(Int,[IndexPath]), NSError>{
+    func bing(_ tableView:UITableView,cell:LevelCell,model:LevelModel) -> Signal<(Int,[IndexPath]), NSError>{
         
         let (signal, observer) = Signal<(Int,[IndexPath]), NSError>.pipe()
-        cell.titleLabel.reactive.text <~ MutableProperty(model.sectionName)
+//        cell.titleLabel.reactive.text <~ MutableProperty(model.sectionName)
+        cell.titleLabel.text = model.sectionName
         cell.leftLabelLeading.constant = CGFloat((model.level - 1) * 10)
         model.isOn!.producer.startWithValues { (isOn) in
             if(model.level == 4){
@@ -82,7 +83,8 @@ class JYMultiLevelViewModel: NSObject {
             break
         }
         
-        cell.rightBut.addTarget(self, action:#selector(JYMultiLevelViewModel.butClick(but:)), for: UIControlEvents.touchUpInside)
+        
+        cell.rightBut.addTarget(self, action:#selector(MultiLevelViewModel.butClick(but:)), for: UIControlEvents.touchUpInside)
     
         
         // MARK: tableView代理 事件模拟

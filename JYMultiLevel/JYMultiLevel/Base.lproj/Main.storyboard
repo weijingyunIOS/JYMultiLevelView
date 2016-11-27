@@ -13,17 +13,17 @@
         <!--Multi Level View Controller-->
         <scene sceneID="GJ7-7t-cn0">
             <objects>
-                <tableViewController id="azA-lg-HyB" customClass="JYMultiLevelViewController" customModule="JYMultiLevel" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="azA-lg-HyB" customClass="MultiLevelViewController" customModule="JYMultiLevel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="g98-pa-1Su">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="JYLevelCellOne" selectionStyle="default" indentationWidth="10" reuseIdentifier="JYLevelCell" rowHeight="44" id="Hg4-J8-j0R" customClass="JYLevelCell" customModule="JYMultiLevel" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LevelCell" rowHeight="44" id="Hg4-J8-j0R" customClass="LevelCell" customModule="JYMultiLevel" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hg4-J8-j0R" id="sg3-Jd-Cd0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpW-cL-Rjp">
@@ -59,10 +59,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="countLabel" destination="Snv-vu-Bow" id="nsc-oW-3es"/>
+                                    <outlet property="countLabel" destination="Snv-vu-Bow" id="Gcb-9H-Kb3"/>
                                     <outlet property="leftLabelLeading" destination="nza-Rm-eee" id="F4M-9z-QAH"/>
-                                    <outlet property="rightBut" destination="nR0-A0-Tcc" id="RN7-kA-FPR"/>
-                                    <outlet property="titleLabel" destination="FpW-cL-Rjp" id="bqP-Y8-1H9"/>
+                                    <outlet property="rightBut" destination="nR0-A0-Tcc" id="WWg-UA-Vgk"/>
+                                    <outlet property="titleLabel" destination="FpW-cL-Rjp" id="SMI-we-4o0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

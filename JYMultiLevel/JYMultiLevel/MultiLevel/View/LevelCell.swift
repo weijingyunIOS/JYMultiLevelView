@@ -1,6 +1,6 @@
 //
-//  JYLevelCellOne.swift
-//  JYMultiLevel
+//  LevelCellOne.swift
+//  MultiLevel
 //
 //  Created by weijingyun on 16/11/26.
 //  Copyright © 2016年 weijingyun. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JYLevelCell: UITableViewCell {
+class LevelCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     

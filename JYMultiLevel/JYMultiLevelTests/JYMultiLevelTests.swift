@@ -1,15 +1,15 @@
 //
-//  JYMultiLevelTests.swift
-//  JYMultiLevelTests
+//  MultiLevelTests.swift
+//  MultiLevelTests
 //
 //  Created by weijingyun on 16/11/26.
 //  Copyright © 2016年 weijingyun. All rights reserved.
 //
 
 import XCTest
-@testable import JYMultiLevel
+@testable import MultiLevel
 
-class JYMultiLevelTests: XCTestCase {
+class MultiLevelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
