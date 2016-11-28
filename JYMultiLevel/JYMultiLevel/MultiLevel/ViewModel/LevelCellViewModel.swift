@@ -65,7 +65,7 @@ class LevelCellViewModel: NSObject {
         }
     }
     
-    func bingCell(_ cell : LevelCell, operation:@escaping ((ELevelCellOperation, LevelCellViewModel)->Void)){
+    func bindCell(_ cell : LevelCell, operation:@escaping ((ELevelCellOperation, LevelCellViewModel)->Void)){
         
         cell.titleLabel.text = levelModel.sectionName
         cell.leftLabelLeading.constant = CGFloat((levelModel.level - 1) * 10)

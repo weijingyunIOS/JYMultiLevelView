@@ -49,7 +49,7 @@ class MultiLevelViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.cellIdentifier, for: indexPath)
         
         // [weak self]
-        cellViewModel.bingCell(cell as! LevelCell){[unowned self] (operation,cellViewModel) in
+        cellViewModel.bindCell(cell as! LevelCell){[unowned self] (operation,cellViewModel) in
             self.viewModel.updateTableView(tableView, operation: operation, cellViewModel: cellViewModel)
         }
         return cell
