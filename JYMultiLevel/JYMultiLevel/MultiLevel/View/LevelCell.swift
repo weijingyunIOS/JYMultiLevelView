@@ -41,4 +41,7 @@ class LevelCell: UITableViewCell {
         butClick(!but.isSelected)
     }
 
+    deinit {
+        print((#file as NSString).lastPathComponent, #function)
+    }
 }

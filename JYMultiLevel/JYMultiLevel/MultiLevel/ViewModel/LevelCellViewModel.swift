@@ -50,8 +50,10 @@ class LevelCellViewModel: NSObject {
         return nil
     }
     
-    func bingCell(_ cell : LevelCell) -> Signal<(ELevelCellOperation, LevelCellViewModel), NSError>{
-        
+    func requestData(urlString:String,succeed: ((Any?)->(Void))?,failure:((Any?)->(Void))?){
+    }
+    
+    func bingCell(_ cell : LevelCell, operation:@escaping ((ELevelCellOperation, LevelCellViewModel)->Void)){
         cell.titleLabel.text = levelModel.sectionName
         // TODO: Bug
         /* 打印发现进行流的绑定 cell.rightBut.isSelected 的值变了但界面未能更新
@@ -60,10 +62,10 @@ class LevelCellViewModel: NSObject {
          */
         cell.rightBut.isSelected = levelModel.isOn
         
-        print("-----",isOn.value ,levelModel.isOn, cell.rightBut.isSelected)
+//        print("-----",isOn.value ,levelModel.isOn, cell.rightBut.isSelected)
         //但是由于cell的复用初始值未必对的上
         cell.rightBut.reactive.isSelected <~ isOn
-        print("+++++",isOn.value ,levelModel.isOn, cell.rightBut.isSelected)
+//        print("+++++",isOn.value ,levelModel.isOn, cell.rightBut.isSelected)
         
         cell.leftLabelLeading.constant = CGFloat((levelModel.level - 1) * 10)
         switch levelModel.level {
@@ -87,12 +89,11 @@ class LevelCellViewModel: NSObject {
             break
         }
         // 事件触发
-        cell.butClick = { (x : Bool) ->() in
+        cell.butClick = {[unowned self] (x : Bool) ->() in
             self.isOn.swap(x)
         }
-        
-        let (signal, observer) = Signal<(ELevelCellOperation, LevelCellViewModel), NSError>.pipe()
-        isOn.producer.startWithValues {(isOn) in
+    
+        isOn.producer.startWithValues {[unowned self](isOn) in
             
                 if self.levelModel.isOn == isOn{
                     return
@@ -105,20 +106,20 @@ class LevelCellViewModel: NSObject {
                 }
             
                 if(isOn){
-                    observer.send(value: (ELevelCellOperation.insertLevel,self))
+                    operation(ELevelCellOperation.insertLevel,self)
                 }else{
-                    observer.send(value: (ELevelCellOperation.moveLevel, self))
+                    operation(ELevelCellOperation.moveLevel,self)
                 }
-            
         }
-        
-
-        return signal
     }
     
     func didSelect(){
         if (levelModel.level != 4) {
             isOn.swap(!isOn.value)
         }
+    }
+    
+    deinit {
+        print((#file as NSString).lastPathComponent, #function)
     }
 }

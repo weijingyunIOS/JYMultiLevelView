@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oki-E4-tbF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="92Q-cw-zLL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="B9J-I5-Kwv">
+            <objects>
+                <viewController id="r9L-IN-cFA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JoP-jR-vma"/>
+                        <viewControllerLayoutGuide type="bottom" id="brJ-iU-x3T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xmN-7o-692">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ett-K8-1Ep">
+                                <rect key="frame" x="141" y="255" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="azA-lg-HyB" kind="show" id="DWA-zd-Fh1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LAj-HH-ED6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUl-WB-ZBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040.8" y="-424.13793103448279"/>
+        </scene>
         <!--Multi Level View Controller-->
         <scene sceneID="GJ7-7t-cn0">
             <objects>
@@ -23,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hg4-J8-j0R" id="sg3-Jd-Cd0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpW-cL-Rjp">
@@ -76,25 +105,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAz-Jf-Gpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1466" y="-413"/>
+            <point key="canvasLocation" x="3092" y="-434.03298350824593"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="KR5-nG-aYB">
+        <scene sceneID="OrZ-go-KSM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oki-E4-tbF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="92Q-cw-zLL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vWe-bg-mp4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MZ5-3m-wDJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="azA-lg-HyB" kind="relationship" relationship="rootViewController" id="2ze-Vb-hap"/>
+                        <segue destination="r9L-IN-cFA" kind="relationship" relationship="rootViewController" id="poK-y5-EQt"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wVz-AO-GeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cNP-3Q-CqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408.80000000000001" y="-232.53373313343329"/>
+            <point key="canvasLocation" x="1101.5999999999999" y="-424.13793103448279"/>
         </scene>
     </scenes>
     <resources>

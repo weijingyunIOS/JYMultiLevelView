@@ -47,15 +47,10 @@ class MultiLevelViewController: UITableViewController {
         
         let cellViewModel = viewModel.showLists[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.cellIdentifier, for: indexPath)
-        let signal = cellViewModel.bingCell(cell as! LevelCell)
-        signal.observeResult { (resut) in
-            
-            resut.analysis(ifSuccess: { (operation, cellViewModel) -> Void in
-                self.viewModel.updateTableView(tableView, operation: operation, cellViewModel: cellViewModel)
-                
-            }, ifFailure: { (error) -> Void in
-                print(error)
-            })
+        
+        // [weak self]
+        cellViewModel.bingCell(cell as! LevelCell){[unowned self] (operation,cellViewModel) in
+            self.viewModel.updateTableView(tableView, operation: operation, cellViewModel: cellViewModel)
         }
         return cell
     }
@@ -65,7 +60,12 @@ class MultiLevelViewController: UITableViewController {
         cellViewModel.didSelect()
     }
     
+    // #file,#line,#column和#function
+    deinit {
+        print((#file as NSString).lastPathComponent, #function)
+    }
 }
+
 
 
 

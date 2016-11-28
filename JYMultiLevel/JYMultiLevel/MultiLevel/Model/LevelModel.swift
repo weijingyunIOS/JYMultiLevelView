@@ -44,4 +44,7 @@ class LevelModel : HandyJSON {
         return getLowerLevelList()
     }
     
+    deinit {
+        print((#file as NSString).lastPathComponent, #function)
+    }
 }

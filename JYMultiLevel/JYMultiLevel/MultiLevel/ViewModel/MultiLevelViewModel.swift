@@ -86,13 +86,13 @@ class MultiLevelViewModel: NSObject {
             switch operation {
                 case .insertLevel:
                     showLists.insert(contentsOf: lists, at: currentIndex + 1)
-                    tableView.insertRows(at: indexs, with: UITableViewRowAnimation.none)
+                    tableView.insertRows(at: indexs, with: UITableViewRowAnimation.automatic)
                     break
                 case .moveLevel:
                     for _ in 1...lists.count { // 一个一个移除
                         showLists.remove(at:  currentIndex + 1)
                     }
-                    tableView.deleteRows(at: indexs, with: UITableViewRowAnimation.none)
+                    tableView.deleteRows(at: indexs, with: UITableViewRowAnimation.automatic)
                     break
 //                default:
 //                    break
@@ -112,5 +112,9 @@ class MultiLevelViewModel: NSObject {
             }
         }
         return nil
+    }
+    
+    deinit {
+        print((#file as NSString).lastPathComponent, #function)
     }
 }
