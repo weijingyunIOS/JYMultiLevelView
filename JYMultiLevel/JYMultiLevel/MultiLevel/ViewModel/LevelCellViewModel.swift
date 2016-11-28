@@ -17,8 +17,8 @@ enum ELevelCellOperation {
 
 class LevelCellViewModel: NSObject {
     
-    let levelModel : LevelModel
-    let isOn : MutableProperty<Bool>
+    private let levelModel : LevelModel
+    private var isOn : MutableProperty<Bool>
     var cellIdentifier : String {
         get{
             return "LevelCell"
@@ -50,23 +50,24 @@ class LevelCellViewModel: NSObject {
         return nil
     }
     
-    func requestData(urlString:String,succeed: ((Any?)->(Void))?,failure:((Any?)->(Void))?){
+    // 收起条件 互斥收起的条件是 第2级 目录 以及它是 打开的
+    func isPackUp(_ cellViewModel : LevelCellViewModel) -> Bool {
+        return levelModel.isOn && levelModel.level == 2
+    }
+    
+    // 展开收起对应列表
+    func switchList(_ cellViewModel : LevelCellViewModel){
+        
+        if (levelModel.level == cellViewModel.levelModel.level) {
+            if (self != cellViewModel) {
+                isOn.swap(false)
+            }
+        }
     }
     
     func bingCell(_ cell : LevelCell, operation:@escaping ((ELevelCellOperation, LevelCellViewModel)->Void)){
+        
         cell.titleLabel.text = levelModel.sectionName
-        // TODO: Bug
-        /* 打印发现进行流的绑定 cell.rightBut.isSelected 的值变了但界面未能更新
-         * ----- false false true
-         * +++++ false false false
-         */
-        cell.rightBut.isSelected = levelModel.isOn
-        
-//        print("-----",isOn.value ,levelModel.isOn, cell.rightBut.isSelected)
-        //但是由于cell的复用初始值未必对的上
-        cell.rightBut.reactive.isSelected <~ isOn
-//        print("+++++",isOn.value ,levelModel.isOn, cell.rightBut.isSelected)
-        
         cell.leftLabelLeading.constant = CGFloat((levelModel.level - 1) * 10)
         switch levelModel.level {
         case 2:
@@ -92,25 +93,48 @@ class LevelCellViewModel: NSObject {
         cell.butClick = {[unowned self] (x : Bool) ->() in
             self.isOn.swap(x)
         }
-    
-        isOn.producer.startWithValues {[unowned self](isOn) in
+        
+        // 1.disposable 手动管理 2.重设 isOn 让其失效 操作符 行为会在其释放时释放
+        isOn = MutableProperty(levelModel.isOn)
+        cell.rightBut.reactive.isSelected <~ isOn.map({[unowned self] (isOn) -> Bool in
+
+            if self.levelModel.isOn == isOn{
+                return isOn
+            }
+            // 模型更新
+            self.levelModel.isOn = isOn
             
-                if self.levelModel.isOn == isOn{
-                    return
-                }
-                // 模型更新
-                self.levelModel.isOn = isOn
-    
-                if(self.levelModel.level == 4){
-                    return
-                }
+            if(self.levelModel.level == 4){
+                return isOn
+            }
             
-                if(isOn){
-                    operation(ELevelCellOperation.insertLevel,self)
-                }else{
-                    operation(ELevelCellOperation.moveLevel,self)
-                }
-        }
+            if(isOn){
+                operation(ELevelCellOperation.insertLevel,self)
+            }else{
+                operation(ELevelCellOperation.moveLevel,self)
+            }
+            return isOn
+        })
+//        disposable?.dispose()
+//        disposable = isOn.producer.startWithValues {[unowned self](isOn) in
+//            
+//            print("44444", cell.rightBut.isSelected , self.isOn.value , self.levelModel.isOn, self)
+//                if self.levelModel.isOn == isOn{
+//                    return
+//                }
+//                // 模型更新
+//                self.levelModel.isOn = isOn
+//    
+//                if(self.levelModel.level == 4){
+//                    return
+//                }
+//    
+//                if(isOn){
+//                    operation(ELevelCellOperation.insertLevel,self)
+//                }else{
+//                    operation(ELevelCellOperation.moveLevel,self)
+//                }
+//        }
     }
     
     func didSelect(){

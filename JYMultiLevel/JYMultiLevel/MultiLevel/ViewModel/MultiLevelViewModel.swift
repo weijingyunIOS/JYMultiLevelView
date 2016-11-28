@@ -61,19 +61,15 @@ class MultiLevelViewModel: NSObject {
         
         do {
             
-            //TODO: 遍历修改展开状态，但是放开了太多属性不符合开闭原则，待处理
-            if (cellViewModel.levelModel.isOn && cellViewModel.levelModel.level == 2) {
+            //互斥收起
+            if (cellViewModel.isPackUp(cellViewModel)) {
                 
                 for cellVM in showLists
                 {
-                    if (cellVM.levelModel.level == cellViewModel.levelModel.level) {
-                        if (cellVM != cellViewModel) {
-                            cellVM.isOn.swap(false)
-                        }
-                    }
+                    cellVM.switchList(cellViewModel)
                 }
             }
-            
+
             
             let lists = try cellViewModel.getListLevelViewModel().unwrap()
             let currentIndex = try getIndexBy(cellViewModel).unwrap()
@@ -98,6 +94,7 @@ class MultiLevelViewModel: NSObject {
 //                    break
             }
             tableView.endUpdates()
+            
         } catch {
             print(error)
         }
