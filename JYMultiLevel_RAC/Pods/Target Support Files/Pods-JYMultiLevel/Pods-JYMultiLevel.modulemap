@@ -1,0 +1,6 @@
+framework module Pods_MultiLevel {
+  umbrella header "Pods-MultiLevel-umbrella.h"
+
+  export *
+  module * { export * }
+}
