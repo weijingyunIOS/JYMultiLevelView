@@ -1,0 +1,687 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B800556F879672C2CF786ED /* Pods_JYMultiLevel_RAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198DDB58CE4B0F4277641355 /* Pods_JYMultiLevel_RAC.framework */; };
+		5C9CC6CB1DEEBF7200C60A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC6CA1DEEBF7200C60A9E /* AppDelegate.swift */; };
+		5C9CC6D01DEEBF7200C60A9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9CC6CE1DEEBF7200C60A9E /* Main.storyboard */; };
+		5C9CC6D21DEEBF7200C60A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9CC6D11DEEBF7200C60A9E /* Assets.xcassets */; };
+		5C9CC6D51DEEBF7200C60A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9CC6D31DEEBF7200C60A9E /* LaunchScreen.storyboard */; };
+		5C9CC6E01DEEBF7200C60A9E /* JYMultiLevel_RACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC6DF1DEEBF7200C60A9E /* JYMultiLevel_RACTests.swift */; };
+		5C9CC6EB1DEEBF7200C60A9E /* JYMultiLevel_RACUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC6EA1DEEBF7200C60A9E /* JYMultiLevel_RACUITests.swift */; };
+		5C9CC7061DEEBF9700C60A9E /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC6FA1DEEBF9700C60A9E /* LevelModel.swift */; };
+		5C9CC7071DEEBF9700C60A9E /* MultiLevel.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9CC6FB1DEEBF9700C60A9E /* MultiLevel.xcassets */; };
+		5C9CC7081DEEBF9700C60A9E /* testJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C9CC6FC1DEEBF9700C60A9E /* testJson.json */; };
+		5C9CC7091DEEBF9700C60A9E /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC6FE1DEEBF9700C60A9E /* LevelCell.swift */; };
+		5C9CC70A1DEEBF9700C60A9E /* MultiLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC7001DEEBF9700C60A9E /* MultiLevelViewController.swift */; };
+		5C9CC70B1DEEBF9700C60A9E /* LevelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC7021DEEBF9700C60A9E /* LevelCellViewModel.swift */; };
+		5C9CC70C1DEEBF9700C60A9E /* MultiLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC7031DEEBF9700C60A9E /* MultiLevelViewModel.swift */; };
+		5C9CC70D1DEEBF9700C60A9E /* OptionalReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9CC7051DEEBF9700C60A9E /* OptionalReturn.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C9CC6DC1DEEBF7200C60A9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C9CC6BF1DEEBF7200C60A9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C9CC6C61DEEBF7200C60A9E;
+			remoteInfo = JYMultiLevel_RAC;
+		};
+		5C9CC6E71DEEBF7200C60A9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C9CC6BF1DEEBF7200C60A9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C9CC6C61DEEBF7200C60A9E;
+			remoteInfo = JYMultiLevel_RAC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		198DDB58CE4B0F4277641355 /* Pods_JYMultiLevel_RAC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JYMultiLevel_RAC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26BE9AF47544E29550E2A3F2 /* Pods-JYMultiLevel_RAC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYMultiLevel_RAC.release.xcconfig"; path = "Pods/Target Support Files/Pods-JYMultiLevel_RAC/Pods-JYMultiLevel_RAC.release.xcconfig"; sourceTree = "<group>"; };
+		5C9CC6C71DEEBF7200C60A9E /* JYMultiLevel_RAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JYMultiLevel_RAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C9CC6CA1DEEBF7200C60A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C9CC6CF1DEEBF7200C60A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C9CC6D11DEEBF7200C60A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C9CC6D41DEEBF7200C60A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C9CC6D61DEEBF7200C60A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C9CC6DB1DEEBF7200C60A9E /* JYMultiLevel_RACTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JYMultiLevel_RACTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C9CC6DF1DEEBF7200C60A9E /* JYMultiLevel_RACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYMultiLevel_RACTests.swift; sourceTree = "<group>"; };
+		5C9CC6E11DEEBF7200C60A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C9CC6E61DEEBF7200C60A9E /* JYMultiLevel_RACUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JYMultiLevel_RACUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C9CC6EA1DEEBF7200C60A9E /* JYMultiLevel_RACUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYMultiLevel_RACUITests.swift; sourceTree = "<group>"; };
+		5C9CC6EC1DEEBF7200C60A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C9CC6FA1DEEBF9700C60A9E /* LevelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
+		5C9CC6FB1DEEBF9700C60A9E /* MultiLevel.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MultiLevel.xcassets; sourceTree = "<group>"; };
+		5C9CC6FC1DEEBF9700C60A9E /* testJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testJson.json; sourceTree = "<group>"; };
+		5C9CC6FE1DEEBF9700C60A9E /* LevelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
+		5C9CC7001DEEBF9700C60A9E /* MultiLevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLevelViewController.swift; sourceTree = "<group>"; };
+		5C9CC7021DEEBF9700C60A9E /* LevelCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCellViewModel.swift; sourceTree = "<group>"; };
+		5C9CC7031DEEBF9700C60A9E /* MultiLevelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLevelViewModel.swift; sourceTree = "<group>"; };
+		5C9CC7051DEEBF9700C60A9E /* OptionalReturn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalReturn.swift; sourceTree = "<group>"; };
+		9BD21481CCFB667FD2A92268 /* Pods-JYMultiLevel_RAC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JYMultiLevel_RAC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JYMultiLevel_RAC/Pods-JYMultiLevel_RAC.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C9CC6C41DEEBF7200C60A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B800556F879672C2CF786ED /* Pods_JYMultiLevel_RAC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9CC6D81DEEBF7200C60A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9CC6E31DEEBF7200C60A9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C9CC6BE1DEEBF7200C60A9E = {
+			isa = PBXGroup;
+			children = (
+				5C9CC6C91DEEBF7200C60A9E /* JYMultiLevel_RAC */,
+				5C9CC6DE1DEEBF7200C60A9E /* JYMultiLevel_RACTests */,
+				5C9CC6E91DEEBF7200C60A9E /* JYMultiLevel_RACUITests */,
+				5C9CC6C81DEEBF7200C60A9E /* Products */,
+				DEA542B2D7198AE9A350F2A0 /* Pods */,
+				6754F4E26B59CF24039C0558 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5C9CC6C81DEEBF7200C60A9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC6C71DEEBF7200C60A9E /* JYMultiLevel_RAC.app */,
+				5C9CC6DB1DEEBF7200C60A9E /* JYMultiLevel_RACTests.xctest */,
+				5C9CC6E61DEEBF7200C60A9E /* JYMultiLevel_RACUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C9CC6C91DEEBF7200C60A9E /* JYMultiLevel_RAC */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC6CA1DEEBF7200C60A9E /* AppDelegate.swift */,
+				5C9CC6F81DEEBF9700C60A9E /* MultiLevel */,
+				5C9CC7041DEEBF9700C60A9E /* UtilityClass */,
+				5C9CC6CE1DEEBF7200C60A9E /* Main.storyboard */,
+				5C9CC6D11DEEBF7200C60A9E /* Assets.xcassets */,
+				5C9CC6D31DEEBF7200C60A9E /* LaunchScreen.storyboard */,
+				5C9CC6D61DEEBF7200C60A9E /* Info.plist */,
+			);
+			path = JYMultiLevel_RAC;
+			sourceTree = "<group>";
+		};
+		5C9CC6DE1DEEBF7200C60A9E /* JYMultiLevel_RACTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC6DF1DEEBF7200C60A9E /* JYMultiLevel_RACTests.swift */,
+				5C9CC6E11DEEBF7200C60A9E /* Info.plist */,
+			);
+			path = JYMultiLevel_RACTests;
+			sourceTree = "<group>";
+		};
+		5C9CC6E91DEEBF7200C60A9E /* JYMultiLevel_RACUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC6EA1DEEBF7200C60A9E /* JYMultiLevel_RACUITests.swift */,
+				5C9CC6EC1DEEBF7200C60A9E /* Info.plist */,
+			);
+			path = JYMultiLevel_RACUITests;
+			sourceTree = "<group>";
+		};
+		5C9CC6F81DEEBF9700C60A9E /* MultiLevel */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC6F91DEEBF9700C60A9E /* Model */,
+				5C9CC6FB1DEEBF9700C60A9E /* MultiLevel.xcassets */,
+				5C9CC6FC1DEEBF9700C60A9E /* testJson.json */,
+				5C9CC6FD1DEEBF9700C60A9E /* View */,
+				5C9CC6FF1DEEBF9700C60A9E /* ViewController */,
+				5C9CC7011DEEBF9700C60A9E /* ViewModel */,
+			);
+			path = MultiLevel;
+			sourceTree = "<group>";
+		};
+		5C9CC6F91DEEBF9700C60A9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC6FA1DEEBF9700C60A9E /* LevelModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C9CC6FD1DEEBF9700C60A9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC6FE1DEEBF9700C60A9E /* LevelCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C9CC6FF1DEEBF9700C60A9E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC7001DEEBF9700C60A9E /* MultiLevelViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5C9CC7011DEEBF9700C60A9E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC7021DEEBF9700C60A9E /* LevelCellViewModel.swift */,
+				5C9CC7031DEEBF9700C60A9E /* MultiLevelViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C9CC7041DEEBF9700C60A9E /* UtilityClass */ = {
+			isa = PBXGroup;
+			children = (
+				5C9CC7051DEEBF9700C60A9E /* OptionalReturn.swift */,
+			);
+			path = UtilityClass;
+			sourceTree = "<group>";
+		};
+		6754F4E26B59CF24039C0558 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				198DDB58CE4B0F4277641355 /* Pods_JYMultiLevel_RAC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEA542B2D7198AE9A350F2A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BD21481CCFB667FD2A92268 /* Pods-JYMultiLevel_RAC.debug.xcconfig */,
+				26BE9AF47544E29550E2A3F2 /* Pods-JYMultiLevel_RAC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C9CC6C61DEEBF7200C60A9E /* JYMultiLevel_RAC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C9CC6EF1DEEBF7200C60A9E /* Build configuration list for PBXNativeTarget "JYMultiLevel_RAC" */;
+			buildPhases = (
+				DAC63F60345DF78533A35D4D /* [CP] Check Pods Manifest.lock */,
+				5C9CC6C31DEEBF7200C60A9E /* Sources */,
+				5C9CC6C41DEEBF7200C60A9E /* Frameworks */,
+				5C9CC6C51DEEBF7200C60A9E /* Resources */,
+				8644BD652CEC51E621C1B125 /* [CP] Embed Pods Frameworks */,
+				0455A34512617AFB05CB9F11 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JYMultiLevel_RAC;
+			productName = JYMultiLevel_RAC;
+			productReference = 5C9CC6C71DEEBF7200C60A9E /* JYMultiLevel_RAC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C9CC6DA1DEEBF7200C60A9E /* JYMultiLevel_RACTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C9CC6F21DEEBF7200C60A9E /* Build configuration list for PBXNativeTarget "JYMultiLevel_RACTests" */;
+			buildPhases = (
+				5C9CC6D71DEEBF7200C60A9E /* Sources */,
+				5C9CC6D81DEEBF7200C60A9E /* Frameworks */,
+				5C9CC6D91DEEBF7200C60A9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C9CC6DD1DEEBF7200C60A9E /* PBXTargetDependency */,
+			);
+			name = JYMultiLevel_RACTests;
+			productName = JYMultiLevel_RACTests;
+			productReference = 5C9CC6DB1DEEBF7200C60A9E /* JYMultiLevel_RACTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5C9CC6E51DEEBF7200C60A9E /* JYMultiLevel_RACUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C9CC6F51DEEBF7200C60A9E /* Build configuration list for PBXNativeTarget "JYMultiLevel_RACUITests" */;
+			buildPhases = (
+				5C9CC6E21DEEBF7200C60A9E /* Sources */,
+				5C9CC6E31DEEBF7200C60A9E /* Frameworks */,
+				5C9CC6E41DEEBF7200C60A9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C9CC6E81DEEBF7200C60A9E /* PBXTargetDependency */,
+			);
+			name = JYMultiLevel_RACUITests;
+			productName = JYMultiLevel_RACUITests;
+			productReference = 5C9CC6E61DEEBF7200C60A9E /* JYMultiLevel_RACUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C9CC6BF1DEEBF7200C60A9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = weijingyun;
+				TargetAttributes = {
+					5C9CC6C61DEEBF7200C60A9E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = XWNPFKK4U5;
+						ProvisioningStyle = Automatic;
+					};
+					5C9CC6DA1DEEBF7200C60A9E = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5C9CC6C61DEEBF7200C60A9E;
+					};
+					5C9CC6E51DEEBF7200C60A9E = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5C9CC6C61DEEBF7200C60A9E;
+					};
+				};
+			};
+			buildConfigurationList = 5C9CC6C21DEEBF7200C60A9E /* Build configuration list for PBXProject "JYMultiLevel_RAC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C9CC6BE1DEEBF7200C60A9E;
+			productRefGroup = 5C9CC6C81DEEBF7200C60A9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C9CC6C61DEEBF7200C60A9E /* JYMultiLevel_RAC */,
+				5C9CC6DA1DEEBF7200C60A9E /* JYMultiLevel_RACTests */,
+				5C9CC6E51DEEBF7200C60A9E /* JYMultiLevel_RACUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C9CC6C51DEEBF7200C60A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C9CC6D51DEEBF7200C60A9E /* LaunchScreen.storyboard in Resources */,
+				5C9CC6D21DEEBF7200C60A9E /* Assets.xcassets in Resources */,
+				5C9CC7071DEEBF9700C60A9E /* MultiLevel.xcassets in Resources */,
+				5C9CC7081DEEBF9700C60A9E /* testJson.json in Resources */,
+				5C9CC6D01DEEBF7200C60A9E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9CC6D91DEEBF7200C60A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9CC6E41DEEBF7200C60A9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0455A34512617AFB05CB9F11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JYMultiLevel_RAC/Pods-JYMultiLevel_RAC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8644BD652CEC51E621C1B125 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JYMultiLevel_RAC/Pods-JYMultiLevel_RAC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAC63F60345DF78533A35D4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C9CC6C31DEEBF7200C60A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C9CC7091DEEBF9700C60A9E /* LevelCell.swift in Sources */,
+				5C9CC70C1DEEBF9700C60A9E /* MultiLevelViewModel.swift in Sources */,
+				5C9CC7061DEEBF9700C60A9E /* LevelModel.swift in Sources */,
+				5C9CC70D1DEEBF9700C60A9E /* OptionalReturn.swift in Sources */,
+				5C9CC70B1DEEBF9700C60A9E /* LevelCellViewModel.swift in Sources */,
+				5C9CC6CB1DEEBF7200C60A9E /* AppDelegate.swift in Sources */,
+				5C9CC70A1DEEBF9700C60A9E /* MultiLevelViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9CC6D71DEEBF7200C60A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C9CC6E01DEEBF7200C60A9E /* JYMultiLevel_RACTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9CC6E21DEEBF7200C60A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C9CC6EB1DEEBF7200C60A9E /* JYMultiLevel_RACUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C9CC6DD1DEEBF7200C60A9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C9CC6C61DEEBF7200C60A9E /* JYMultiLevel_RAC */;
+			targetProxy = 5C9CC6DC1DEEBF7200C60A9E /* PBXContainerItemProxy */;
+		};
+		5C9CC6E81DEEBF7200C60A9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C9CC6C61DEEBF7200C60A9E /* JYMultiLevel_RAC */;
+			targetProxy = 5C9CC6E71DEEBF7200C60A9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5C9CC6CE1DEEBF7200C60A9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C9CC6CF1DEEBF7200C60A9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C9CC6D31DEEBF7200C60A9E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C9CC6D41DEEBF7200C60A9E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C9CC6ED1DEEBF7200C60A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C9CC6EE1DEEBF7200C60A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C9CC6F01DEEBF7200C60A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BD21481CCFB667FD2A92268 /* Pods-JYMultiLevel_RAC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				INFOPLIST_FILE = JYMultiLevel_RAC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yunyunxiao.JYMultiLevel-RAC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5C9CC6F11DEEBF7200C60A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26BE9AF47544E29550E2A3F2 /* Pods-JYMultiLevel_RAC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				INFOPLIST_FILE = JYMultiLevel_RAC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yunyunxiao.JYMultiLevel-RAC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5C9CC6F31DEEBF7200C60A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JYMultiLevel_RACTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yunyunxiao.JYMultiLevel-RACTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JYMultiLevel_RAC.app/JYMultiLevel_RAC";
+			};
+			name = Debug;
+		};
+		5C9CC6F41DEEBF7200C60A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JYMultiLevel_RACTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yunyunxiao.JYMultiLevel-RACTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JYMultiLevel_RAC.app/JYMultiLevel_RAC";
+			};
+			name = Release;
+		};
+		5C9CC6F61DEEBF7200C60A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JYMultiLevel_RACUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yunyunxiao.JYMultiLevel-RACUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JYMultiLevel_RAC;
+			};
+			name = Debug;
+		};
+		5C9CC6F71DEEBF7200C60A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JYMultiLevel_RACUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yunyunxiao.JYMultiLevel-RACUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JYMultiLevel_RAC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C9CC6C21DEEBF7200C60A9E /* Build configuration list for PBXProject "JYMultiLevel_RAC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C9CC6ED1DEEBF7200C60A9E /* Debug */,
+				5C9CC6EE1DEEBF7200C60A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C9CC6EF1DEEBF7200C60A9E /* Build configuration list for PBXNativeTarget "JYMultiLevel_RAC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C9CC6F01DEEBF7200C60A9E /* Debug */,
+				5C9CC6F11DEEBF7200C60A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C9CC6F21DEEBF7200C60A9E /* Build configuration list for PBXNativeTarget "JYMultiLevel_RACTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C9CC6F31DEEBF7200C60A9E /* Debug */,
+				5C9CC6F41DEEBF7200C60A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C9CC6F51DEEBF7200C60A9E /* Build configuration list for PBXNativeTarget "JYMultiLevel_RACUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C9CC6F61DEEBF7200C60A9E /* Debug */,
+				5C9CC6F71DEEBF7200C60A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C9CC6BF1DEEBF7200C60A9E /* Project object */;
+}

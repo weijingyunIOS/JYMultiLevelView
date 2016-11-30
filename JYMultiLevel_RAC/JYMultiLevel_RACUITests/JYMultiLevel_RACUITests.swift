@@ -1,14 +1,14 @@
 //
-//  MultiLevelUITests.swift
-//  MultiLevelUITests
+//  JYMultiLevel_RACUITests.swift
+//  JYMultiLevel_RACUITests
 //
-//  Created by weijingyun on 16/11/26.
+//  Created by weijingyun on 16/11/30.
 //  Copyright © 2016年 weijingyun. All rights reserved.
 //
 
 import XCTest
 
-class MultiLevelUITests: XCTestCase {
+class JYMultiLevel_RACUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
